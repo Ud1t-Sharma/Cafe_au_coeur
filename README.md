@@ -25,7 +25,6 @@ A complete website for a French-inspired café built with HTML, CSS, JavaScript,
 4. Configure the database connection in `database/db_connect.php`
 5. Place the project files in your web server's directory
 6. Access the website through your local server
-- **Note**: [Add any new setup instructions here]
 
 ## Database Structure
 
@@ -45,7 +44,6 @@ You can customize the website by:
 - Updating menu items in the database
 - Changing images in the `images/` directory
 - Adjusting prices and delivery fees in the JavaScript files
-- **New Customization Options**: [Add any new customization options here]
 
 ## License
 
