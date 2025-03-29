@@ -1,0 +1,310 @@
+/* Menu Header */
+.menu-header {
+    position: relative;
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+    color: var(--white);
+    margin-top: 60px;
+}
+
+.menu-header-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.menu-header-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-header-bg .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(36, 32, 29, 0.7);
+}
+
+.menu-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.menu-header p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+/* Category Navigation */
+.category-nav {
+    background-color: var(--white);
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 60px;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.category-nav.sticky {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    overflow-x: auto;
+    padding-bottom: var(--spacing-sm);
+    scrollbar-width: none;
+}
+
+.category-buttons::-webkit-scrollbar {
+    display: none;
+}
+
+.category-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--cafe-cream);
+    color: var(--cafe-brown);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    background-color: var(--cafe-cream);
+    opacity: 0.8;
+}
+
+.category-btn.active {
+    background-color: var(--cafe-gold);
+    color: var(--white);
+}
+
+/* Menu Content */
+.menu-content {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--gray-100);
+}
+
+.menu-category {
+    margin-bottom: var(--spacing-3xl);
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.category-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-right: var(--spacing-md);
+    margin-bottom: 0;
+}
+
+.category-divider {
+    flex: 1;
+    height: 1px;
+    background-color: var(--cafe-gold);
+    opacity: 0.3;
+}
+
+.category-description {
+    margin-bottom: var(--spacing-xl);
+    max-width: 800px;
+    color: var(--gray-600);
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.menu-item {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: slideUp 0.6s ease forwards;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.menu-item-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover .menu-item-image img {
+    transform: scale(1.05);
+}
+
+.menu-item-content {
+    padding: var(--spacing-lg);
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+}
+
+.menu-item-title {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cafe-charcoal);
+    margin-bottom: 0;
+}
+
+.menu-item-price {
+    font-weight: 600;
+    color: var(--cafe-gold);
+}
+
+.menu-item-description {
+    color: var(--gray-600);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+}
+
+.menu-item-details {
+    margin-bottom: var(--spacing-md);
+}
+
+.menu-item-detail {
+    margin-bottom: var(--spacing-sm);
+}
+
+.menu-item-detail-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cafe-charcoal);
+    margin-bottom: var(--spacing-xs);
+}
+
+.menu-item-detail-text {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+.menu-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item-category {
+    font-size: 0.875rem;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: var(--cafe-cream);
+    color: var(--cafe-brown);
+    border-radius: var(--border-radius-full);
+}
+
+.add-to-cart-btn {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--cafe-brown);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    color: var(--cafe-gold);
+}
+
+.add-to-cart-btn-fixed {
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--cafe-gold);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-btn-fixed:hover {
+    background-color: var(--cafe-brown);
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .menu-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .menu-header p {
+        font-size: 1.125rem;
+    }
+    
+    .category-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-header h1 {
+        font-size: 2rem;
+    }
+    
+    .menu-items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-items-grid {
+        grid-template-columns: 1fr;
+    }
+}

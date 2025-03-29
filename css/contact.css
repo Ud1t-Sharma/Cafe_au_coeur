@@ -1,0 +1,26 @@
+:root {
+    --cafe-cream: #F5F1E6;
+    --cafe-brown: #8A6F5B;
+    --cafe-darkBrown: #5D4037;
+    --cafe-gold: #D4AF37;
+    --cafe-charcoal: #2F2F2F;
+}
+.text-cafe-charcoal {
+    color: var(--cafe-charcoal);
+}
+
+.text-cafe-brown {
+    color: var(--cafe-brown);
+}
+
+.text-cafe-darkBrown {
+    color: var(--cafe-darkBrown);
+}
+
+.text-cafe-gold {
+    color: var(--cafe-gold);
+}
+/* Add left padding to shift "Café au Coéur" to the left */
+nav a.cafe-logo {
+    padding-left: 15rem; /* Adjust the value as needed */
+}
