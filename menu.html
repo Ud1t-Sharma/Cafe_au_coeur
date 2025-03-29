@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Café au Coéur</title>
+    <meta name="description" content="Explore our curated menu of specialty coffees, pastries, breakfast and lunch options">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Café au Coéur</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menu Header -->
+    <div class="menu-header">
+        <div class="menu-header-bg">
+            <img src="photos/menu_top.webp" alt="Coffee beans">
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Discover our selection of specialty coffees and dishes prepared with passion</p>
+        </div>
+    </div>
+    
+    <!-- Category Navigation -->
+    <div class="category-nav" id="categoryNav">
+        <div class="container">
+            <div class="category-buttons">
+                <!-- Category buttons will be loaded via JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            <div id="menuCategories">
+                <!-- Menu categories and items will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>Café au Coéur</h3>
+                    <p>123 Paris Street<br>New Delhi - 110001</p>
+                    <p>Tel: +91 98765 43210</p>
+                    <p>Email: info@cafeaucoeur.com</p>
+                </div>
+                <div class="footer-hours">
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 7:00 AM - 8:00 PM</p>
+                    <p>Saturday - Sunday: 8:00 AM - 9:00 PM</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/_sharma.g_?igsh=NnIyNjhtNGY2ZHUz"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Café au Coéur. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded here via JavaScript -->
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary checkout-btn" id="checkoutBtn">Checkout</a>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

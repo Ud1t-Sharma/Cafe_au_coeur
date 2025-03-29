@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Café au Coéur</title>
+    <meta name="description" content="Complete your order from Café au Coéur">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Café au Coéur</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-header">
+                <a href="javascript:history.back()" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to cart
+                </a>
+                <h1>Checkout</h1>
+            </div>
+            
+            <div class="checkout-grid">
+                <div class="checkout-main">
+                    <!-- Delivery Options -->
+                    <div class="checkout-card">
+                        <h2>Delivery Options</h2>
+                        <div class="delivery-options">
+                            <div class="option">
+                                <input type="radio" id="delivery" name="deliveryOption" value="delivery" checked>
+                                <label for="delivery">Home Delivery</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="pickup" name="deliveryOption" value="pickup">
+                                <label for="pickup">Pickup from Store</label>
+                            </div>
+                        </div>
+                        
+                        <div class="delivery-address" id="deliveryAddressForm">
+                            <h3>Delivery Address</h3>
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name</label>
+                                        <input type="text" id="fullName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" id="address" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state"  required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pincode">Pincode</label>
+                                    <input type="text" id="pincode" required>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="pickup-info" id="pickupInfo" style="display: none;">
+                            <h3>Pickup Details</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> Café au Coéur, 123 Paris Street, New Delhi - 110001</p>
+                            <p><i class="fas fa-clock"></i> Available for pickup: 10:00 AM - 8:00 PM</p>
+                            <div class="form-group">
+                                <label for="pickupName">Name for Pickup</label>
+                                <input type="text" id="pickupName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pickupPhone">Phone Number</label>
+                                <input type="tel" id="pickupPhone" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Methods -->
+                    <div class="checkout-card">
+                        <h2>Payment Methods</h2>
+                        <div class="payment-methods">
+                            <div class="payment-method" data-method="credit-card">
+                                <div class="payment-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <h3>Credit Card</h3>
+                                    <p>Secure card payment</p>
+                                </div>
+                                <div class="payment-radio">
+                                    <input type="radio" name="paymentMethod" id="creditCard" value="credit-card">
+                                    <span class="checkmark"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-method" data-method="debit-card">
+                                <div class="payment-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <h3>Debit Card</h3>
+                                    <p>Secure card payment</p>
+                                </div>
+                                <div class="payment-radio">
+                                    <input type="radio" name="paymentMethod" id="debitCard" value="debit-card">
+                                    <span class="checkmark"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-method" data-method="upi">
+                                <div class="payment-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <h3>UPI Payment</h3>
+                                    <p>Pay via UPI app</p>
+                                </div>
+                                <div class="payment-radio">
+                                    <input type="radio" name="paymentMethod" id="upi" value="upi">
+                                    <span class="checkmark"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-method" data-method="qr-code">
+                                <div class="payment-icon">
+                                    <i class="fas fa-qrcode"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <h3>Scan QR Code</h3>
+                                    <p>Scan QR with UPI app</p>
+                                </div>
+                                <div class="payment-radio">
+                                    <input type="radio" name="paymentMethod" id="qrCode" value="qr-code">
+                                    <span class="checkmark"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-method" data-method="cash">
+                                <div class="payment-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="payment-info">
+                                    <h3>Cash</h3>
+                                    <p>Pay on delivery</p>
+                                </div>
+                                <div class="payment-radio">
+                                    <input type="radio" name="paymentMethod" id="cash" value="cash">
+                                    <span class="checkmark"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Method Forms -->
+                        <div class="payment-forms">
+                            <!-- Credit Card Form -->
+                            <div class="payment-form" id="creditCardForm" style="display: none;">
+                                <h3>Card Details</h3>
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiryDate">Expiry Date</label>
+                                        <input type="text" id="expiryDate" placeholder="MM/YY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" placeholder="123">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card</label>
+                                    <input type="text" id="cardName" placeholder="John Doe">
+                                </div>
+                            </div>
+                            
+                            <!-- UPI Payment Form -->
+                            <div class="payment-form" id="upiForm" style="display: none;">
+                                <h3>UPI Payment</h3>
+                                <div class="form-group">
+                                    <label for="upiId">UPI ID</label>
+                                    <input type="text" id="upiId" placeholder="yourname@upi">
+                                </div>
+                                <button class="btn btn-secondary" id="verifyUpi">Verify & Pay</button>
+                            </div>
+                            
+                            <!-- QR Code Payment -->
+                            <div class="payment-form" id="qrCodeForm" style="display: none;">
+                                <h3>Scan this QR Code</h3>
+                                <div class="qr-code-container">
+                                    <img src="photos/upi_qr.jpg" alt="UPI QR Code">
+                                </div>
+                                <p class="qr-code-info">UPI ID: atulucr100@okhdfcbank</p>
+                                <p class="qr-code-help">Scan this code using any UPI app like Google Pay, PhonePe, Paytm, etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="checkout-sidebar">
+                    <div class="checkout-card order-summary">
+                        <h2>Order Summary</h2>
+                        <div class="order-items" id="orderItems">
+                            <!-- Order items will be populated via JavaScript -->
+                        </div>
+                        <div class="order-totals">
+                            <div class="order-total-row">
+                                <span>Subtotal</span>
+                                <span id="orderSubtotal">₹0.00</span>
+                            </div>
+                            <div class="order-total-row">
+                                <span>Service fee</span>
+                                <span id="serviceFee">₹40.00</span>
+                            </div>
+                            <div class="order-total-row" id="deliveryFeeRow">
+                                <span>Delivery fee</span>
+                                <span id="deliveryFee">₹40.00</span>
+                            </div>
+                            <div class="order-total-row total">
+                                <span>Total</span>
+                                <span id="orderTotal">₹0.00</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="completePayment">Complete Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>Order Confirmed!</h2>
+            <p>Your order has been placed successfully. </p>
+            <p class="success-message">Thank you for choosing Café au Coéur!</p>
+            <button class="btn btn-primary" id="returnHomeBtn">Return to Home</button>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>Café au Coéur</h3>
+                    <p>123 Paris Street<br>New Delhi - 110001</p>
+                    <p>Tel: +91 98765 43210</p>
+                    <p>Email: info@cafeaucoeur.com</p>
+                </div>
+                <div class="footer-hours">
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 7:00 AM - 8:00 PM</p>
+                    <p>Saturday - Sunday: 8:00 AM - 9:00 PM</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sharma.g?igsh=NnIyNjhtNGY2ZHUz"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Café au Coéur. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
