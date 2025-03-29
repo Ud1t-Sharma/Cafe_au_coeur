@@ -10,7 +10,6 @@ A complete website for a French-inspired café built with HTML, CSS, JavaScript,
 - Checkout system with multiple payment options
 - Delivery and pickup options for Indian customers
 - MySQL database for product and order management
-- **New Feature**: [Add any new features here]
 
 ## Technical Stack
 
