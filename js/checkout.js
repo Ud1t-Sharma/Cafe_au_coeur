@@ -108,7 +108,7 @@ function handlePayment() {
     }, 2000);
 }
 
-// Validate delivery fields
+/* Validate delivery fields
 function validateDeliveryFields() {
     const fields = ['fullName', 'phone', 'address', 'city', 'state', 'pincode'];
     for (let field of fields) {
@@ -123,7 +123,39 @@ function validateDeliveryFields() {
         return false;
     }
     return true;
+}*/
+function validateDeliveryFields() {
+    const fields = ['fullName', 'phone', 'address', 'city', 'state', 'pincode'];
+    for (let field of fields) {
+        const value = document.getElementById(field).value.trim();
+        if (!value) {
+            alert('Please fill in all delivery address fields');
+            return false;
+        }
+    }
+
+    // Phone number validation
+    if (!/^[0-9]{10}$/.test(document.getElementById('phone').value)) {
+        alert('Enter a valid 10-digit phone number');
+        return false;
+    }
+
+    // State restriction: Only "New Delhi" allowed
+    const stateValue = document.getElementById('state').value.trim().toLowerCase();
+    if (stateValue !== 'delhi') {
+        alert('ENTER delhi in state and New delhi in city');
+        return false;
+    }
+
+    const cityValue = document.getElementById('city').value.trim().toLowerCase();
+    if (cityValue !== 'new delhi') {
+        alert('Currently, we only deliver to New Delhi');
+        return false;
+    }
+
+    return true;
 }
+
 
 // Validate pickup fields
 function validatePickupFields() {
